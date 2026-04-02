@@ -32,6 +32,7 @@ For each task:
 ### Step 3: Complete Development
 
 After all tasks complete and verified:
+- **OPTIONAL:** If the user wants quality pushed beyond "correct" toward "excellent" and has provided evaluation criteria — **OPTIONAL SUB-SKILL:** Use superpowers:iterative-refinement-loop before finishing.
 - Announce: "I'm using the finishing-a-development-branch skill to complete this work."
 - **REQUIRED SUB-SKILL:** Use superpowers:finishing-a-development-branch
 - Follow that skill to verify tests, present options, execute choice
@@ -68,3 +69,6 @@ After all tasks complete and verified:
 - **superpowers:using-git-worktrees** - REQUIRED: Set up isolated workspace before starting
 - **superpowers:writing-plans** - Creates the plan this skill executes
 - **superpowers:finishing-a-development-branch** - Complete development after all tasks
+
+**Optional workflow skills:**
+- **superpowers:iterative-refinement-loop** - OPTIONAL: Refine quality after all tasks complete, when user provides evaluation criteria

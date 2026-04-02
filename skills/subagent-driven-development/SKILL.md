@@ -80,7 +80,10 @@ digraph process {
     "Mark task complete in TodoWrite" -> "More tasks remain?";
     "More tasks remain?" -> "Dispatch implementer subagent (./implementer-prompt.md)" [label="yes"];
     "More tasks remain?" -> "Dispatch final code reviewer subagent for entire implementation" [label="no"];
-    "Dispatch final code reviewer subagent for entire implementation" -> "Use superpowers:finishing-a-development-branch";
+    "Dispatch final code reviewer subagent for entire implementation" -> "Quality refinement needed?";
+    "Quality refinement needed?" -> "Use superpowers:iterative-refinement-loop" [label="yes — high bar or subjective quality"];
+    "Quality refinement needed?" -> "Use superpowers:finishing-a-development-branch" [label="no"];
+    "Use superpowers:iterative-refinement-loop" -> "Use superpowers:finishing-a-development-branch";
 }
 ```
 
@@ -122,6 +125,10 @@ Implementer subagents report one of four statuses. Handle each appropriately:
 - `./implementer-prompt.md` - Dispatch implementer subagent
 - `./spec-reviewer-prompt.md` - Dispatch spec compliance reviewer subagent
 - `./code-quality-reviewer-prompt.md` - Dispatch code quality reviewer subagent
+
+## Optional Post-Completion Skill
+
+**superpowers:iterative-refinement-loop** — After all tasks complete and the final code review passes, invoke this skill if the user wants quality pushed beyond "correct" toward "excellent." Requires the user to provide evaluation criteria. Skip if the task is mechanical or criteria aren't available.
 
 ## Example Workflow
 
